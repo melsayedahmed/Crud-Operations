@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>CRUD</title>
+    <link rel="icon" href="css/operational-system.png" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="container my-5 shadow-sm">
+      <h3 class="text-center mb-3">Product Management System</h3>
+      <!-- Form to add or update a product -->
+      <div class="mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="productNameInput"
+          placeholder="Enter Product Name ..."
+        />
+        <div id="productNameAlert" class="alert alert-danger mt-2 d-none">
+          Product name must start with a capital letter and be between 3-20
+          characters.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="productPriceInput"
+          placeholder="Enter Product Price ..."
+        />
+        <div id="productPriceAlert" class="alert alert-danger mt-2 d-none">
+          Product price must be a positive number.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="productCategoryInput"
+          placeholder="Enter Product Category ..."
+        />
+        <div id="productCategoryAlert" class="alert alert-danger mt-2 d-none">
+          Product category is required.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <textarea
+          class="form-control"
+          id="productDescInput"
+          rows="1"
+          placeholder="Enter Product Description ..."
+        ></textarea>
+        <div id="productDescAlert" class="alert alert-danger mt-2 d-none">
+          Product description is required.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <input
+          type="file"
+          class="form-control"
+          id="productImage"
+          placeholder="Enter Product Image ..."
+        />
+        <img
+          id="imagePreview"
+          src="#"
+          alt="Image Preview"
+          class="img-thumbnail mt-2"
+          style="display: none; max-width: 150px"
+        />
+        <div id="productImageAlert" class="alert alert-danger mt-2 d-none">
+          Product Image is required.
+        </div>
+        <div id="productImageSizeAlert" class="alert alert-danger mt-2 d-none">
+          Image size must be less than 300KB.
+        </div>
+      </div>
+
+      <button id="addBtn" class="btn btn-primary">Add Product</button>
+
+      <hr />
+
+      <!-- Search bar -->
+      <div class="mb-3 w-50 mx-auto shadow-sm">
+        <input
+          type="text"
+          class="form-control"
+          id="searchInput"
+          placeholder="Search for a Product..."
+          onkeyup="display()"
+        />
+      </div>
+
+      <!-- Table to display products -->
+      <div id="Product" class="Product row px-2"></div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>
